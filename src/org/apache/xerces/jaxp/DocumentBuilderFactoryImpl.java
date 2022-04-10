@@ -148,6 +148,7 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
      * Allows the user to retrieve specific attributes on the underlying 
      * implementation.
      */
+    // TODO: Check for domParser null pointer dereference
     public Object getAttribute(String name)
         throws IllegalArgumentException
     {
