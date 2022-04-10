@@ -771,6 +771,7 @@ public class XSSimpleTypeDecl implements XSSimpleType, TypeInfo {
     /**
      * If <restriction> is chosen, or built-in derived types by restriction
      */
+    // TODO: Replace checks for specific values and instead check sign of result variable
     void applyFacets(XSFacets facets, short presentFacet, short fixedFacet, short patternType, ValidationContext context)
     throws InvalidDatatypeFacetException {
 
