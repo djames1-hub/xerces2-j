@@ -896,6 +896,7 @@ public class DeferredDocumentImpl
      * with the specified name index, or -1 if no such definition
      * exists.
      */
+    // TODO: change comparison of String using == with String's equals method
     public int lookupElementDefinition(String elementName) {
 
         if (fNodeCount > 1) {
