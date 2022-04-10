@@ -127,6 +127,7 @@ public class IteratorView
     }
     
     /** Constructor */
+    // TODO: Remove treePanel variable as its dead code
     public IteratorView (String filename) {
         super("IteratorView: "+filename);
         try {
