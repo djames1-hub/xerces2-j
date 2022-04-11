@@ -771,7 +771,6 @@ public class XSSimpleTypeDecl implements XSSimpleType, TypeInfo {
     /**
      * If <restriction> is chosen, or built-in derived types by restriction
      */
-    // TODO: Replace checks for specific values and instead check sign of result variable
     void applyFacets(XSFacets facets, short presentFacet, short fixedFacet, short patternType, ValidationContext context)
     throws InvalidDatatypeFacetException {
 
@@ -1112,7 +1111,7 @@ public class XSSimpleTypeDecl implements XSSimpleType, TypeInfo {
             // check 4.3.7.c1 must: minInclusive <= maxInclusive
             if (((fFacetsDefined &  FACET_MAXINCLUSIVE) != 0) && ((fFacetsDefined & FACET_MININCLUSIVE) != 0)) {
                 result = fDVs[fValidationDV].compare(fMinInclusive, fMaxInclusive);
-                if (result != -1 && result != 0)
+                if (result > -1 && result < 0)
                     reportError("minInclusive-less-than-equal-to-maxInclusive", new Object[]{fMinInclusive, fMaxInclusive, fTypeName});
             }
 
