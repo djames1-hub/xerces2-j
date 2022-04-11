@@ -156,8 +156,7 @@ public class DOMTreeFull
             } // setRootNode(Node)
 
         /** Returns the root. */
-        // TODO: Synchronize getter since setter is synchronized
-        public Node getRootNode() {
+        public synchronized Node getRootNode() {
             return root;
             }
 
