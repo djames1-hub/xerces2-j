@@ -127,7 +127,6 @@ public class IteratorView
     }
     
     /** Constructor */
-    // TODO: Remove treePanel variable as its dead code
     public IteratorView (String filename) {
         super("IteratorView: "+filename);
         try {
@@ -270,10 +269,6 @@ public class IteratorView
                 BorderFactory.createTitledBorder("Controls"),
                 BorderFactory.createEmptyBorder(4, 4, 4, 4)
                 ));
-                
-                
-            // tree panel    
-            JPanel treePanel = new JPanel(new BorderLayout());
                 
             JScrollPane treeScroll = new JScrollPane(jtree) ;
             treeScroll.setBorder(BorderFactory.createCompoundBorder(
