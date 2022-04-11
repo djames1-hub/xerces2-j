@@ -142,6 +142,7 @@ public abstract class IdentityConstraint implements XSIDCDefinition {
     // equals:  returns true if and only if the String
     // representations of all members of both objects (except for
     // the elenemtName field) are equal.
+    // TODO: Redefine equals method to boolean equals(Object) since covariant defining of equals is not necessary
     public boolean equals(IdentityConstraint id) {
         boolean areEqual = fIdentityConstraintName.equals(id.fIdentityConstraintName);
         if(!areEqual) return false;
