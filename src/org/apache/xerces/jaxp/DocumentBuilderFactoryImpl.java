@@ -148,7 +148,6 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
      * Allows the user to retrieve specific attributes on the underlying 
      * implementation.
      */
-    // TODO: Check for domParser null pointer dereference
     public Object getAttribute(String name)
         throws IllegalArgumentException
     {
@@ -170,6 +169,9 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
         } catch (SAXException se1) {
             // assert(name is not recognized or not supported), try feature
             try {
+                if (domParser == null) {
+                    throw new SAXException();
+                }
                 boolean result = domParser.getFeature(name);
                 // Must have been a feature
                 return result ? Boolean.TRUE : Boolean.FALSE;
