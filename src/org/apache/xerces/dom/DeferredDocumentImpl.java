@@ -896,7 +896,6 @@ public class DeferredDocumentImpl
      * with the specified name index, or -1 if no such definition
      * exists.
      */
-    // TODO: change comparison of String using == with String's equals method
     public int lookupElementDefinition(String elementName) {
 
         if (fNodeCount > 1) {
@@ -931,7 +930,7 @@ public class DeferredDocumentImpl
                 nindex = index & CHUNK_MASK;
                 if (getChunkIndex(fNodeType, nchunk, nindex) ==
                                            NodeImpl.ELEMENT_DEFINITION_NODE
-                 && getChunkValue(fNodeName, nchunk, nindex) == elementName) {
+                 && getChunkValue(fNodeName, nchunk, nindex).equals(elementName)) {
                     return index;
                 }
             }
