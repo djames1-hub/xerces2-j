@@ -472,7 +472,6 @@ public class XSComplexTypeDecl implements XSComplexTypeDefinition, TypeInfo {
      * @return boolean True if the type is derived by extension for the
      *         reference type
      */
-    // TODO: Replace non-short-circuit logic using & with short-circuit logic &&
     private boolean isDerivedByExtension(String ancestorNS,
             String ancestorName, int derivationMethod, XSTypeDefinition type) {
         
@@ -507,12 +506,12 @@ public class XSComplexTypeDecl implements XSComplexTypeDefinition, TypeInfo {
                 // we treat it like a restriction
                 if ((derivationMethod & DERIVATION_EXTENSION) != 0) {
                     return extension
-                    & ((XSSimpleTypeDecl) type).isDOMDerivedFrom(
+                    && ((XSSimpleTypeDecl) type).isDOMDerivedFrom(
                             ancestorNS, ancestorName,
                             (derivationMethod & DERIVATION_RESTRICTION));
                 } else {
                     return extension
-                    & ((XSSimpleTypeDecl) type).isDOMDerivedFrom(
+                    && ((XSSimpleTypeDecl) type).isDOMDerivedFrom(
                             ancestorNS, ancestorName, derivationMethod);
                 }
                 
