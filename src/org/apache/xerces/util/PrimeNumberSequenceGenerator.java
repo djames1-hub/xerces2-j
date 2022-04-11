@@ -38,6 +38,7 @@ final class PrimeNumberSequenceGenerator {
       521, 523, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599, 601, 607, 613, 617, 
       619, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727};
     
+    // TODO: Make Random object an instance variable since Random object is used once and then discarded which produces mediocre randomness
     static void generateSequence(int[] arrayToFill) {
         Random r = new Random();
         for (int i = 0; i < arrayToFill.length; ++i) {
