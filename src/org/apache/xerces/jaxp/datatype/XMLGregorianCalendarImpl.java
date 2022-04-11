@@ -1790,6 +1790,7 @@ class XMLGregorianCalendarImpl
      * @throws java.lang.IllegalStateException if the combination of set fields
      *    does not match one of the eight defined XML Schema builtin date/time datatypes. 
      */
+    // TODO: change non-null parameter for format method to something else or dereference may occur.
     public String toXMLFormat() {
 
         QName typekind = getXMLSchemaType();
