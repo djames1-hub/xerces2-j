@@ -427,14 +427,12 @@ final class ElementSchemePointer implements XPointerPart {
      * @see org.apache.xerces.xpointer.XPointerPart#isChildFragmentResolved()
      *   
      */    
-    // TODO: Remove useless ternary as condition found flag for an empty element will always evaluate to to true
     public boolean isChildFragmentResolved() {
     	// if only a shorthand pointer was present
     	if (fIsShortHand && fShortHandPointer != null && fChildSequence.length <= 0) {
     		return fShortHandPointer.isChildFragmentResolved();
     	} else {
-    		return fWasOnlyEmptyElementFound ? !fWasOnlyEmptyElementFound
-    				: (fIsFragmentResolved && (fCurrentChildDepth >= fFoundDepth));
+    		return !fWasOnlyEmptyElementFound;	
     	}
     }
     
