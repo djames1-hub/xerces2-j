@@ -472,6 +472,7 @@ public class XSComplexTypeDecl implements XSComplexTypeDefinition, TypeInfo {
      * @return boolean True if the type is derived by extension for the
      *         reference type
      */
+    // TODO: Replace non-short-circuit logic using & with short-circuit logic &&
     private boolean isDerivedByExtension(String ancestorNS,
             String ancestorName, int derivationMethod, XSTypeDefinition type) {
         
